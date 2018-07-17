@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace PubSubClientCore.Responses
 {
-    public class SubscribeResponse : MessageBase
+    public class SubscriberMetadata : MessageBase
     {
         [JsonProperty("connectionString")]
         public string ConnectionString { get; set; }

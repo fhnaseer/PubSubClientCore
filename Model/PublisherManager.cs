@@ -2,9 +2,9 @@ using System;
 
 namespace PubSubClientCore.Model
 {
-    public class Publisher : NodeBase
+    public class PublisherManager : NodeBase
     {
-        public Publisher(ConfigurationFile configurationFile) : base(configurationFile)
+        public PublisherManager(ConfigurationFile configurationFile) : base(configurationFile)
         {
         }
 

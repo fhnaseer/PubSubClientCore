@@ -8,8 +8,8 @@ namespace PubSubClientCore
 {
     class Program
     {
-        static Subscriber _subscriber;
-        static Publisher _publisher;
+        static SubscriberManagerBase _subscriberManager;
+        static PublisherManager _publisherManager;
 
         static void Main(string[] args)
         {
@@ -32,16 +32,16 @@ namespace PubSubClientCore
         {
             if (configurationFile.ApplicationMode == ApplicationMode.Publisher)
             {
-                _publisher = new Publisher(configurationFile);
-                _publisher.Setup();
+                _publisherManager = new PublisherManager(configurationFile);
+                _publisherManager.Setup();
             }
             else if (configurationFile.ApplicationMode == ApplicationMode.Subscriber)
             {
                 if (configurationFile.ProviderType == ProviderType.Azure)
-                    _subscriber = new AzureSubscriber(configurationFile);
+                    _subscriberManager = new AzureSubscriberManager(configurationFile);
                 else
-                    _subscriber = new AwsSubscriber(configurationFile);
-                _subscriber.Setup();
+                    _subscriberManager = new AwsSubscriberManager(configurationFile);
+                _subscriberManager.Setup();
             }
             Console.Read();
         }

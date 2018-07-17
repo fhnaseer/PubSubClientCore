@@ -2,5 +2,5 @@
   "baseUrl": "http://localhost:7071",
   "providerType": "Azure",
   "applicationMode": "Subscriber",
-  "nodesCount": 3
+  "nodesCount": 1
 }
