@@ -32,15 +32,17 @@ namespace PubSubClientCore
         {
             if (configurationFile.ApplicationMode == ApplicationMode.Publisher)
             {
-                _publisher = new Publisher();
-                Publisher.Setup(configurationFile);
+                _publisher = new Publisher(configurationFile);
+                _publisher.Setup();
             }
             else if (configurationFile.ApplicationMode == ApplicationMode.Subscriber)
             {
-                _subscriber = new Subscriber(configurationFile);
+                if (configurationFile.ProviderType == ProviderType.Azure)
+                    _subscriber = new AzureSubscriber(configurationFile);
+                else
+                    _subscriber = new AwsSubscriber(configurationFile);
                 _subscriber.Setup();
             }
-
             Console.Read();
         }
     }
