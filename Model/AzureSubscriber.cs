@@ -7,19 +7,17 @@ using PubSubClientCore.Responses;
 
 namespace PubSubClientCore.Model
 {
-    public class AzureSubscriber
+    public class AzureSubscriber : SubscriberBase
     {
-        private readonly SubscriberMetadata _subscriberMetadata;
         private QueueClient _queueClient;
 
-        public AzureSubscriber(SubscriberMetadata subscriberMetadata)
+        public AzureSubscriber(SubscriberMetadata subscriberMetadata) : base(subscriberMetadata)
         {
-            _subscriberMetadata = subscriberMetadata;
         }
 
-        internal void Setup()
+        public override void Setup()
         {
-            _queueClient = new QueueClient(_subscriberMetadata.ConnectionString, _subscriberMetadata.QueueName);
+            _queueClient = new QueueClient(SubscriberMetadata.ConnectionString, SubscriberMetadata.QueueName);
             var messageHandlerOptions = new MessageHandlerOptions(ExceptionReceivedHandler)
             {
                 MaxConcurrentCalls = 1,
