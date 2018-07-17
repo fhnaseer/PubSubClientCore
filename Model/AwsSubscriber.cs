@@ -36,7 +36,13 @@ namespace PubSubClientCore.Model
             {
                 var response = await _amazonClient.ReceiveMessageAsync(request);
                 foreach (var message in response.Messages)
+                {
                     Console.WriteLine(message.Body);
+                    var deleteMessageRequest = new DeleteMessageRequest();
+                    deleteMessageRequest.QueueUrl = SubscriberMetadata.QueueUrl;
+                    deleteMessageRequest.ReceiptHandle = message.ReceiptHandle;
+                    var result = _amazonClient.DeleteMessageAsync(deleteMessageRequest).Result;
+                }
             }
         }
     }
