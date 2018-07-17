@@ -1,7 +1,7 @@
 using System;
 using Newtonsoft.Json;
 
-namespace PubSubClientCore
+namespace PubSubClientCore.Model
 {
     public enum ProviderType
     {
@@ -26,5 +26,8 @@ namespace PubSubClientCore
 
         [JsonProperty("applicationMode")]
         public ApplicationMode ApplicationMode { get; set; }
+
+        [JsonProperty("nodesCount")]
+        public int NodesCount { get; set; }
     }
 }
