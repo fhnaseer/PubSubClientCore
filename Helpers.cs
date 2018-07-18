@@ -23,5 +23,20 @@ namespace PubSubClientCore
         {
             return baseUrl + "/SubscribeFunction";
         }
+
+        public static string PublishTopicUrl(string baseUrl)
+        {
+            return baseUrl + "/PublishTopic";
+        }
+
+        public static string PublishContentUrl(string baseUrl)
+        {
+            return baseUrl + "/PublishContent";
+        }
+
+        public static string PublishFunctionUrl(string baseUrl)
+        {
+            return baseUrl + "/PublishFunction";
+        }
     }
 }

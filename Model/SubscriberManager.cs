@@ -29,7 +29,7 @@ namespace PubSubClientCore.Model
             CallFunctions(nodeNumber);
         }
 
-        public override void CallFunctions(int nodeNumber)
+        public void CallFunctions(int nodeNumber)
         {
             if (nodeNumber < ConfigurationFile.TopicsMetadata.NodesCount)
                 Subscribers[nodeNumber].SubscribeTopics(ConfigurationFile);

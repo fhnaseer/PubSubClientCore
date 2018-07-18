@@ -21,7 +21,7 @@ namespace PubSubClientCore
             //     return;
             // }
             //var fileName = args[0];
-            var fileName = "CreateSubscribers.json";
+            var fileName = "CreatePublishers.json";
             var fileText = File.ReadAllText(fileName);
             var configurationFile = JsonConvert.DeserializeObject<ConfigurationFile>(fileText);
             Console.WriteLine($"Provider: {configurationFile.ProviderType}");
