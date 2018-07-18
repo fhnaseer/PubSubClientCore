@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace PubSubClientCore.Responses
+namespace PubSubClientCore.Entities
 {
     public class MessageBase
     {
@@ -8,6 +8,9 @@ namespace PubSubClientCore.Responses
         public string SubscriberId { get; set; }
 
         [JsonProperty("message")] public string Message { get; set; } = "Some Message;";
+
+        [JsonProperty("nodesCount")]
+        public int NodesCount { get; set; }
 
         public override string ToString()
         {

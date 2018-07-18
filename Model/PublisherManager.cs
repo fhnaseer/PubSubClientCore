@@ -1,4 +1,5 @@
 using System;
+using PubSubClientCore.Entities;
 
 namespace PubSubClientCore.Model
 {

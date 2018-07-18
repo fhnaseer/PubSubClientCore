@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using PubSubClientCore.Entities;
 using PubSubClientCore.Model;
 
 namespace PubSubClientCore

@@ -1,7 +1,8 @@
 using System;
+using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace PubSubClientCore.Model
+namespace PubSubClientCore.Entities
 {
     public enum ProviderType
     {
@@ -29,5 +30,14 @@ namespace PubSubClientCore.Model
 
         [JsonProperty("nodesCount")]
         public int NodesCount { get; set; }
+
+        [JsonProperty("topicsMetadata")]
+        public TopicsMetadata TopicsMetadata { get; set; }
+
+        [JsonProperty("contentMetadata")]
+        public ContentMetadata ContentMetadata { get; set; }
+
+        [JsonProperty("FunctionsMetadata")]
+        public FunctionsMetadata FunctionsMetadata { get; set; }
     }
 }

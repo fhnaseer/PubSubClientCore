@@ -3,7 +3,7 @@ using Amazon;
 using Amazon.Runtime;
 using Amazon.SQS;
 using Amazon.SQS.Model;
-using PubSubClientCore.Responses;
+using PubSubClientCore.Entities;
 
 namespace PubSubClientCore.Model
 {

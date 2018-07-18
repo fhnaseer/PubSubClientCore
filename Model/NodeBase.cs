@@ -1,6 +1,6 @@
 using System;
 using Newtonsoft.Json;
-using PubSubClientCore.Responses;
+using PubSubClientCore.Entities;
 
 namespace PubSubClientCore.Model
 {

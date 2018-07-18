@@ -1,4 +1,4 @@
-using PubSubClientCore.Responses;
+using PubSubClientCore.Entities;
 
 namespace PubSubClientCore.Model
 {

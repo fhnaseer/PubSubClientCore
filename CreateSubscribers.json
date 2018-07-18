@@ -2,5 +2,47 @@
   "baseUrl": "http://localhost:7071",
   "providerType": "Azure",
   "applicationMode": "Subscriber",
-  "nodesCount": 1
+  "nodesCount": 0,
+  "topicsMetadata": {
+    "nodesCount": 1,
+    "topics": [
+      "topic1",
+      "topic2",
+      "topic3",
+      "topic4",
+      "topic5"
+    ]
+  },
+  "contentMetadata": {
+    "nodesCount": 1,
+    "content": [
+      {
+        "key": "content1",
+        "value": "someValue",
+        "condition": "="
+      },
+      {
+        "key": "content2",
+        "value": "1000",
+        "condition": ">="
+      }
+    ]
+  },
+  "functionsMetadata": {
+    "nodesCount": 1,
+    "functions": [
+      {
+        "functionType": "url",
+        "subscriptionTopic": "function1",
+        "matchingFunction": "someUrl",
+        "matchingInputs": "index"
+      },
+      {
+        "functionType": "url",
+        "subscriptionTopic": "function2",
+        "matchingFunction": "someUrl2",
+        "matchingInputs": "index"
+      }
+    ]
+  }
 }

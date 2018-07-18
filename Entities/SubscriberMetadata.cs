@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace PubSubClientCore.Responses
+namespace PubSubClientCore.Entities
 {
     public class SubscriberMetadata : MessageBase
     {
