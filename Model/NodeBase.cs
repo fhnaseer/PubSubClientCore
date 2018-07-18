@@ -20,5 +20,7 @@ namespace PubSubClientCore.Model
         }
 
         public abstract void SetupNode(int nodeNumber);
+
+        public abstract void CallFunctions(int nodeNumber);
     }
 }

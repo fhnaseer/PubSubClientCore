@@ -13,5 +13,10 @@ namespace PubSubClientCore.Model
         {
             // TODO: Send some random data here,
         }
+
+        public override void CallFunctions(int nodeNumber)
+        {
+            // TODO: Send some random data here,
+        }
     }
 }

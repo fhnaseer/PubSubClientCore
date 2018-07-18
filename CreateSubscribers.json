@@ -1,8 +1,8 @@
 {
-  "baseUrl": "http://localhost:7071",
+  "baseUrl": "http://localhost:7071/api",
   "providerType": "Azure",
   "applicationMode": "Subscriber",
-  "nodesCount": 0,
+  "nodesCount": 1,
   "topicsMetadata": {
     "nodesCount": 1,
     "topics": [

@@ -18,7 +18,7 @@ namespace PubSubClientCore.Model
 
         public override async void SetupNode(int nodeNumber)
         {
-            var response = await HttpRestClient.Get(ConfigurationFile.BaseUrl + "/api/Subscribe");
+            var response = await HttpRestClient.Get(Helpers.RegisterSubscriberUrl(ConfigurationFile.BaseUrl));
             Nodes[nodeNumber] = JsonConvert.DeserializeObject<SubscriberMetadata>(response);
             Console.WriteLine($"Subscriber {nodeNumber} created. Queue Name: {Nodes[nodeNumber].QueueName}");
             if (ConfigurationFile.ProviderType == ProviderType.Azure)
@@ -26,6 +26,17 @@ namespace PubSubClientCore.Model
             else
                 Subscribers[nodeNumber] = new AwsSubscriber(Nodes[nodeNumber]);
             Subscribers[nodeNumber].Setup();
+            CallFunctions(nodeNumber);
+        }
+
+        public override void CallFunctions(int nodeNumber)
+        {
+            if (nodeNumber < ConfigurationFile.TopicsMetadata.NodesCount)
+                Subscribers[nodeNumber].SubscribeTopics(ConfigurationFile);
+            if (nodeNumber < ConfigurationFile.ContentMetadata.NodesCount)
+                Subscribers[nodeNumber].SubscribeContent(ConfigurationFile);
+            if (nodeNumber < ConfigurationFile.FunctionsMetadata.NodesCount)
+                Subscribers[nodeNumber].SubscribeFunction(ConfigurationFile);
         }
     }
 }
